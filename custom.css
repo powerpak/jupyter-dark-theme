@@ -1,8 +1,24 @@
 /*
-Custom user CSS
+  Dark theme for Jupyter Notebook/iPython 4
+  Author: Theodore Pak
+  Repo at: https://github.com/powerpak/jupyter-dark-theme
+
+  Inspired by and adapted from the following:
+  Base16 for iPython Notebook (https://github.com/nsonnad/base16-ipython-notebook)
+  Base16 Twilight Dark, David Hart (http://hart-dev.com)
+  CodeMirror template adapted for IPython Notebook by Nikhil Sonnad (https://github.com/nsonnad/base16-ipython-notebook)
+  CodeMirror template by Jan T. Scott (https://github.com/idleberg/base16-chrome-devtools)
+  Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16)
 */
 
-/* Change code font */
+/* 
+  SET THE CODE FONT 
+
+  I prefer Bitsream Vera Sans Mono, which is freely downloadable here:
+  http://www.dafont.com/bitstream-vera-mono.font
+  However, there are plenty of alternatives at http://programmingfonts.org/
+  in which case, add your preferred font to the stack below.
+*/
 
 .CodeMirror pre {
     font-family: "Bitstream Vera Sans Mono", Monaco, monospace;
@@ -26,22 +42,8 @@ div.input_area {
     background: rbga(0, 0, 0, 0.5);
 }
 
-/*
-Name:       Base16 Twilight Dark
-Author:     David Hart (http://hart-dev.com)
-
-CodeMirror template adapted for IPython Notebook by Nikhil Sonnad (https://github.com/nsonnad/base16-ipython-notebook)
-CodeMirror template by Jan T. Sott (https://github.com/idleberg/base16-chrome-devtools)
-Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16)
-*/
-
-/* Uncomment to use a custom font
-div#notebook, div.CodeMirror, div.output_area pre, div.output_wrapper, div.prompt {
-  font-family: 'Custom Font Name', monospace !important;
-}
-*/
-
 /* GLOBALS */
+
 @media not print { body { background-color: #eee; } }
 a { color: #CF4A4C; }
 a:hover, a:focus { color: #DE6F71; }

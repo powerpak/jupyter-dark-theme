@@ -1,12 +1,12 @@
-# Dark theme for Jupyter notebook (iPython 4)
+# Dark theme for Jupyter Notebook (iPython 4)
 
-This is a fully dark theme for [Jupyter](http://jupyter.org/) notebook interface, including the notebook list, dialogs, and menus. Jupyter includes iPython 4 as its default kernel. It is possible to upgrade iPython 2 or 3 to Jupyter.
+This is a completely dark theme for the [Jupyter Notebook](http://jupyter.org/) interface, including the notebook list, dialogs, and menus. Jupyter includes [iPython 4](http://ipython.org/) as its default kernel, but since the [iPython 3 to 4 transition](http://ipython.org/#jupyter-and-the-future-of-ipython), it has gained even better support for [other interpreters](https://github.com/ipython/ipython/wiki/IPython-kernels-for-other-languages) like R and Ruby. It is possible to upgrade iPython 2 or 3 to Jupyter + iPython 4.
 
-Source code coloring is based on the Twilight theme for Textmate.
+Source code coloring is based on the Twilight theme for Textmate.  Print preview output for notebooks retains a white background with printable foreground colors.
 
 ## Installing
 
-To install this theme, copy or symlink `custom.css` into `~/.jupyter/custom/` (create this directory if it doesn't exist.) Then, running `jupyter notebook`, `iruby notebook`, etc. will use this theme.
+To install this theme, copy or symlink `custom.css` into `~/.jupyter/custom/` (create that directory if it doesn't exist.) Then, whenever you run `jupyter notebook`, `iruby notebook`, etc. it will use this theme.
 
 ## Screenshots
 
