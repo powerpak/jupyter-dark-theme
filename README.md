@@ -1,6 +1,6 @@
 # Dark theme for Jupyter Notebook (iPython 4)
 
-This is a completely dark theme for the [Jupyter Notebook](http://jupyter.org/) interface, including the notebook list, dialogs, and menus. Jupyter includes [iPython 4](http://ipython.org/) as its default kernel (which, confusingly, supports both Python 2.x and 3.x). Since the [iPython 3 to 4 transition](http://ipython.org/#jupyter-and-the-future-of-ipython), it has gained better support for [other interpreters](https://github.com/ipython/ipython/wiki/IPython-kernels-for-other-languages) like R and Ruby. It is possible to [upgrade](http://jupyter.readthedocs.org/en/latest/install.html#upgrading) iPython 2 or 3 to Jupyter + iPython 4.
+This is a completely dark theme for the [Jupyter Notebook](http://jupyter.org/) interface. Jupyter includes [iPython 4](http://ipython.org/) as its default kernel (which, confusingly, supports both Python 2.x and 3.x). Since the [iPython 3 to 4 transition](http://ipython.org/#jupyter-and-the-future-of-ipython), it has gained better support for [other interpreters](https://github.com/ipython/ipython/wiki/IPython-kernels-for-other-languages) like R and Ruby. It is possible to [upgrade](http://jupyter.readthedocs.org/en/latest/install.html#upgrading) iPython 2 or 3 to Jupyter + iPython 4.
 
 Source code coloring is based on the Twilight theme for Textmate.  Print preview output for notebooks retains a white background with printable foreground colors.
 
@@ -10,9 +10,13 @@ To install this theme, copy or symlink `custom.css` into `~/.jupyter/custom/` (c
 
 ## Screenshots
 
+All components of the notebook UI are themed, including the dialogs and menus. By default, I've hidden the toolbar, but you can reactivate this by commenting out the annotated line in `custom.css`.
+
 ![Notebook theme](screenshot-notebook.png)
 
 ![Notebook UI](screenshot-modal.png)
+
+The notebook list is themed as well.
 
 ![Notebook list](screenshot-list.png)
 
