@@ -112,7 +112,7 @@ div#maintoolbar { display: none !important; }
   Header UI styles
 */
 
-.notebook_app > #header { display: block !important; }
+body.notebook_app > #header { display: block !important; }
 .notebook_app > #header, .edit_app > #header { 
   background-color: #333;
   color: #b7b7b7;
