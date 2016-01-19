@@ -259,6 +259,18 @@ span.save_widget span.filename:hover {
   background: rgba(221, 240, 255, 0.19);
 }
 
+#complete {
+  border-color: #444;
+  background: rgba(50, 50, 50, 0.95);
+  color: #b7b7b7;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+.completions select {
+  background: rgba(50, 50, 50, 0.95);
+  color: #b7b7b7;
+}
+
 /*
   Set fonts and styles for outputted content
 */
@@ -284,6 +296,19 @@ div.output_html { font-family: sans-serif; }
 */
 
 @media not print {
+  .notebook_app div.cell.running .input .input_area { 
+    border-left-color: #82591E;
+    -webkit-animation-name: pulseBorder;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-timing-function: ease-in-out;
+  }
+  @-webkit-keyframes pulseBorder {
+    from { border-left-color: #82591E; }
+    to { border-left-color: #eea236; }
+  }
+  
   .notebook_app div.input_prompt {color: #9b703f;}
   .notebook_app div.output_prompt {color: #9b859d;}
   .notebook_app div.input_area {
@@ -346,6 +371,7 @@ div.CodeMirror-selected {background: rgba(221, 240, 255, 0.19) !important;}
 
 .CodeMirror span.cm-variable {color: #F8F8F8;}
 .CodeMirror span.cm-variable-2 {color: #7587A6;}
+.CodeMirror span.cm-variable-3 {color: #7587A6;}
 .CodeMirror span.cm-def {color: #9B703F;}
 .CodeMirror span.cm-error {color: #F8F8F8; background-color: rgba(86, 45, 86, 0.2);}
 .CodeMirror span.cm-bracket {color: #373b41;}
