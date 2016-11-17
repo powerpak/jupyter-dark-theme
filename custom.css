@@ -11,6 +11,10 @@
   Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16)
 */
 
+body, body.notebook_app.command_mode {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 /* 
   SET THE CODE/MONOSPACE FONT 
 
