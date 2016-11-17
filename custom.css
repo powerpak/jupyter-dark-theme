@@ -315,9 +315,10 @@ div.output_html { font-family: sans-serif; }
     border-radius: 0px;
     border: 1px solid #464b50;
   }
+  .notebook_app div.output_subarea { max-width: 100%; }
   .notebook_app div.output_area pre { font-weight: normal; color: #979797; }
   .notebook_app div.output_subarea { font-weight: normal; color: #979797; }
-  .notebook_app div.output_stderr {background-color: #cf6a4c;}
+  .notebook_app div.output_stderr {background-color: #A0783C;}
   .notebook_app div.output_stderr pre {color: #eee;}
 
   .notebook_app .rendered_html table, .notebook_app .rendered_html th, .notebook_app .rendered_html tr, .notebook_app .rendered_html td {
