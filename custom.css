@@ -1,18 +1,34 @@
 /*
-Custom user CSS
+  Dark theme for Jupyter Notebook/iPython 4
+  Author: Theodore Pak
+  Repo at: https://github.com/powerpak/jupyter-dark-theme
+
+  Inspired by and adapted from the following:
+  Base16 for iPython Notebook (https://github.com/nsonnad/base16-ipython-notebook)
+  Base16 Twilight Dark, David Hart (http://hart-dev.com)
+  CodeMirror template adapted for IPython Notebook by Nikhil Sonnad (https://github.com/nsonnad/base16-ipython-notebook)
+  CodeMirror template by Jan T. Scott (https://github.com/idleberg/base16-chrome-devtools)
+  Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16)
 */
 
 body, body.notebook_app.command_mode {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* Change code font */
+/* 
+  SET THE CODE/MONOSPACE FONT 
 
-.CodeMirror pre {
+  I prefer Bitsream Vera Sans Mono, which is freely downloadable here:
+  http://www.dafont.com/bitstream-vera-mono.font
+  However, there are plenty of alternatives at http://programmingfonts.org/
+  in which case, add your preferred font to the stack below.
+*/
+
+.CodeMirror pre, .CodeMirror-dialog, .CodeMirror-dialog .CodeMirror-search-field, .terminal-app .terminal {
     font-family: "Bitstream Vera Sans Mono", Monaco, monospace;
     font-size: 9pt;
 }
-
+.terminal-app .terminal { line-height: 1.3em; }
 div.output pre, div.output code, .rendered_html pre, .rendered_html code, div.completions select, div.container pre {
   font-family: "Bitstream Vera Sans Mono", Monaco, monospace;
 }
@@ -30,22 +46,8 @@ div.input_area {
     background: rbga(0, 0, 0, 0.5);
 }
 
-/*
-Name:       Base16 Twilight Dark
-Author:     David Hart (http://hart-dev.com)
-
-CodeMirror template adapted for IPython Notebook by Nikhil Sonnad (https://github.com/nsonnad/base16-ipython-notebook)
-CodeMirror template by Jan T. Sott (https://github.com/idleberg/base16-chrome-devtools)
-Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16)
-*/
-
-/* Uncomment to use a custom font
-div#notebook, div.CodeMirror, div.output_area pre, div.output_wrapper, div.prompt {
-  font-family: 'Custom Font Name', monospace !important;
-}
-*/
-
 /* GLOBALS */
+
 @media not print { body { background-color: #eee; } }
 a { color: #CF4A4C; }
 a:hover, a:focus { color: #DE6F71; }
@@ -53,8 +55,7 @@ a:hover, a:focus { color: #DE6F71; }
 /* INTRO PAGE */
 
 body[data-notebook-path] { background-color: #222; }
-body[data-notebook-path] #header { display: none !important; }
-body.notebook_app #header { display: block !important; }
+body[data-notebook-path] #header, .terminal-app #header { display: none !important; }
 
 .tabbable { color: #979797; }
 .nav-tabs { border-bottom-color: #444; }
@@ -79,6 +80,7 @@ body.notebook_app #header { display: block !important; }
 .panel { border-color: #444; background-color: #222; }
 .panel-default > .panel-heading { border-color: #444; }
 #site .panel-group .panel .panel-heading { background-color: #444; }
+#running .panel-group .panel .panel-body .list_container .list_item { border-bottom-color: #444; }
 
 /* Dropdown menus */
 
@@ -101,7 +103,11 @@ body.notebook_app #header { display: block !important; }
   color: #fff;
 }
 
-/* NOTEBOOK */
+/* TERMINAL INTERFACE */
+.terminal-app #site { background: #272727; }
+.terminal-app .terminal { background: #141414 !important; }
+
+/* NOTEBOOK AND EDITOR INTERFACE */
 
 /* comment out the following line to unhide the toolbar */
 div#maintoolbar { display: none !important; }
@@ -110,12 +116,14 @@ div#maintoolbar { display: none !important; }
   Header UI styles
 */
 
-.notebook_app > #header { 
+body.notebook_app > #header { display: block !important; }
+.notebook_app > #header, .edit_app > #header { 
   background-color: #333;
   color: #b7b7b7;
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
+.edit_app #menubar .navbar { margin-bottom: 0; }
 body > #header .header-bar { background: #444; }
 #header .navbar-brand { display: none; }
 #header .filename { margin-left: 0; margin-right: 2em; }
@@ -144,7 +152,7 @@ span.save_widget span.filename:hover {
     background: #111;
   }
 
-  .notebook_app #notebook-container {
+  .notebook_app #notebook-container, .edit_app #texteditor-backdrop {
     background: #272727;
   }
 }
@@ -255,6 +263,18 @@ span.save_widget span.filename:hover {
   background: rgba(221, 240, 255, 0.19);
 }
 
+#complete {
+  border-color: #444;
+  background: rgba(50, 50, 50, 0.95);
+  color: #b7b7b7;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+.completions select {
+  background: rgba(50, 50, 50, 0.95);
+  color: #b7b7b7;
+}
+
 /*
   Set fonts and styles for outputted content
 */
@@ -280,6 +300,19 @@ div.output_html { font-family: sans-serif; }
 */
 
 @media not print {
+  .notebook_app div.cell.running .input .input_area { 
+    border-left-color: #82591E;
+    -webkit-animation-name: pulseBorder;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-timing-function: ease-in-out;
+  }
+  @-webkit-keyframes pulseBorder {
+    from { border-left-color: #82591E; }
+    to { border-left-color: #eea236; }
+  }
+  
   .notebook_app div.input_prompt {color: #9b703f;}
   .notebook_app div.output_prompt {color: #9b859d;}
   .notebook_app div.input_area {
@@ -324,9 +357,9 @@ span.ansiyellow {color: #f9ee98;}
 
 .CodeMirror {background: #141414; color: #F8F8F8;}
 div.CodeMirror-selected {background: rgba(221, 240, 255, 0.19) !important;}
-.CodeMirror-gutters {background: #444; border-right: 0px; color: #777;}
+#texteditor-backdrop #texteditor-container .CodeMirror-gutter, .CodeMirror-gutters {background: #444; border-right: 0px; color: #777;}
 .CodeMirror-linenumber {color: #b4b7b4;}
-.CodeMirror-cursor {border-left: 1px solid #A7A7A7 !important; margin-top: -2px; min-height: 18px;}
+.CodeMirror-cursor {border-left: 1px solid #A7A7A7 !important; margin-top: -2px; min-height: 18px;} 
 
 .CodeMirror span.cm-comment {color: #5F5A60; font-style: italic;}
 .CodeMirror span.cm-atom {color: #CF6A4C;}
@@ -342,6 +375,7 @@ div.CodeMirror-selected {background: rgba(221, 240, 255, 0.19) !important;}
 
 .CodeMirror span.cm-variable {color: #F8F8F8;}
 .CodeMirror span.cm-variable-2 {color: #7587A6;}
+.CodeMirror span.cm-variable-3 {color: #7587A6;}
 .CodeMirror span.cm-def {color: #9B703F;}
 .CodeMirror span.cm-error {color: #F8F8F8; background-color: rgba(86, 45, 86, 0.2);}
 .CodeMirror span.cm-bracket {color: #373b41;}
