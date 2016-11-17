@@ -2,6 +2,10 @@
 Custom user CSS
 */
 
+body, body.notebook_app.command_mode {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 /* Change code font */
 
 .CodeMirror pre {
