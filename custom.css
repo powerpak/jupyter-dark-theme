@@ -49,7 +49,7 @@ div.input_area {
 /* GLOBALS */
 
 @media not print { body { background-color: #eee; } }
-a { color: #CF4A4C; }
+a { color: #CCC; }
 a:hover, a:focus { color: #DE6F71; }
 
 /* INTRO PAGE */
@@ -285,12 +285,20 @@ div#notebook .text_cell_render {
   line-height: 1.25;
 }
 
+.rendered_html tbody tr:nth-child(odd){
+  background: #000;
+}
+
+.jupyter-widgets{
+  color: #ccc !important;
+}
+
 .rendered_html li p {
   margin-top: 1em;
 }
 
 .rendered_html h1 {
-    color: #CF4A4C;
+    color: #CCC;
 }
 
 div.output_html { font-family: sans-serif; }
