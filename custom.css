@@ -392,3 +392,19 @@ div.CodeMirror-selected {background: rgba(221, 240, 255, 0.19) !important;}
 .cm-s-default span.cm-header {color: #CF4A4C;}
 .cm-s-default span.cm-variable-2 {color: #7587A6;}
 .cm-s-default span.cm-comment {color: #7F7A80;}
+
+/*
+  TOC extension
+*/
+
+#toc-wrapper, #navigate_menu a, #toc-level0 a, .toc-item-num {
+        color: #979797 !important;
+}
+
+#toc-wrapper {
+        background: #272727 !important;
+}
+
+.sidebar-wrapper {
+        border-style: none !important;
+}
