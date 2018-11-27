@@ -32,7 +32,7 @@ body, body.notebook_app.command_mode {
 div.output pre, div.output code, .rendered_html pre, .rendered_html code, div.completions select, div.container pre {
   font-family: "Bitstream Vera Sans Mono", Monaco, monospace;
 }
-div.output pre, div.output code, .rendered_html pre, .rendered_html p code, div.completions select, div.container pre {
+div.output pre, div.output code, .rendered_html pre, .rendered_html p code, div.completions select, div.container pre, .rendered_html li code {
     font-size: 9pt;
 }
 
@@ -289,15 +289,29 @@ div#notebook .text_cell_render {
   margin-top: 1em;
 }
 
+.rendered_html ol ul, .rendered_html ul ul, .rendered_html ul ol {
+  margin-top: 0em;
+}
+
 .rendered_html h1 {
-    color: #CF4A4C;
+  color: #CF4A4C;
 }
 
 div.output_html { font-family: sans-serif; }
 
+.notebook_app .rendered_html tbody tr:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Outputted SVGs should assume a white background */
+.output_svg div {
+  background: white;
+}
+
 /*
   Set colors and styles that we only want on the screen, not for print
 */
+/* In general, the .notebook_app selector restricts to the "live" notebook editor and not exported HTML versions */
 
 @media not print {
   .notebook_app div.cell.running .input .input_area { 
@@ -344,13 +358,13 @@ div.output_html { font-family: sans-serif; }
   Terminal text coloring
 */
 
-span.ansiblack {color: #323537;}
-span.ansiblue {color: #afc4db;}
-span.ansigray {color: #838184;}
-span.ansigreen {color: #8f9d6a;}
-span.ansipurple {color: #9b859d;}
-span.ansired {color: #cf6a4c;}
-span.ansiyellow {color: #f9ee98;}
+.notebook_app span.ansi-black-fg,  .notebook_app span.ansi-black-intense-fg  { color: #323537; }
+.notebook_app span.ansi-blue-fg,   .notebook_app span.ansi-blue-intense-fg   { color: #afc4db; }
+.notebook_app span.ansi-gray-fg,   .notebook_app span.ansi-gray-intense-fg   { color: #838184; }
+.notebook_app span.ansi-green-fg,  .notebook_app span.ansi-green-intense-fg  { color: #8f9d6a; }
+.notebook_app span.ansi-purple-fg, .notebook_app span.ansi-purple-intense-fg { color: #9b859d; }
+.notebook_app span.ansi-red-fg,    .notebook_app span.ansi-red-intense-fg    { color: #cf6a4c; }
+.notebook_app span.ansi-yellow-fg, .notebook_app span.ansi-yellow-intense-fg { color: #f9ee98; } 
 
 /*
   Code editing
