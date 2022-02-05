@@ -24,21 +24,21 @@ body, body.notebook_app.command_mode {
   in which case, add your preferred font to the stack below.
 */
 
-.CodeMirror pre, .CodeMirror-dialog, .CodeMirror-dialog .CodeMirror-search-field, .terminal-app .terminal {
-    font-family: "Bitstream Vera Sans Mono", Monaco, monospace;
-    font-size: 9pt;
+.CodeMirror pre.CodeMirror-line, .CodeMirror-dialog, .CodeMirror-dialog .CodeMirror-search-field, .terminal-app .terminal {
+    font-family: "SF Mono", "Bitstream Vera Sans Mono", Monaco, monospace;
+    font-size: 10pt;
 }
 .terminal-app .terminal { line-height: 1.3em; }
 div.output pre, div.output code, .rendered_html pre, .rendered_html code, div.completions select, div.container pre {
-  font-family: "Bitstream Vera Sans Mono", Monaco, monospace;
+  font-family: "SF Mono", "Bitstream Vera Sans Mono", Monaco, monospace;
 }
 div.output pre, div.output code, .rendered_html pre, .rendered_html p code, div.completions select, div.container pre, .rendered_html li code {
-    font-size: 9pt;
+    font-size: 10pt;
 }
 
 div.prompt, div.tooltiptext pre {
-    font-family: "Bitstream Vera Sans Mono", Monaco, monospace;
-    font-size: 8pt;
+    font-family: "SF Mono", "Bitstream Vera Sans Mono", Monaco, monospace;
+    font-size: 9pt;
 }
 
 div.input_area {
