@@ -52,26 +52,6 @@ div.input_area {
 a { color: #CF4A4C; }
 a:hover, a:focus { color: #DE6F71; }
 
-/* SCROLLBARS */
-
-body::-webkit-scrollbar, div::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
-}
-
-body::-webkit-scrollbar-track, div::-webkit-scrollbar-track {
-  background: transparent;
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
-  border-radius: 12px;
-}
-
-body::-webkit-scrollbar-thumb, div::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 12px;
-  border: 3px solid rgba(0, 0, 0, 0);
-  background-clip: padding-box;
-}
-
 /* INTRO PAGE */
 
 body[data-notebook-path] { background-color: #222; }
@@ -372,6 +352,23 @@ div.output_html { font-family: sans-serif; }
     background-color: #444;
     color: #b0b0b0;
     padding: 0;
+  }
+  
+  /* Scrollbars that match the dark theme of the "live" notebook editor */
+  .notebook_app div::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  .notebook_app body::-webkit-scrollbar-track, div::-webkit-scrollbar-track {
+    background: transparent;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+  }
+  .notebook_app body::-webkit-scrollbar-thumb, div::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    border: 3px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
   }
 }
 
