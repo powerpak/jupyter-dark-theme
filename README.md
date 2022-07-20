@@ -6,7 +6,7 @@ Source code coloring is based on the Twilight theme for Textmate.  Print preview
 
 ## Installing
 
-To install this theme, copy or symlink `custom.css` into `~/.jupyter/custom/` (create that directory if it doesn't exist.) Then, whenever you run `jupyter notebook`, `iruby notebook`, etc. it will use this theme.
+To install this theme, copy or symlink `custom.css` and `custom.js` into `~/.jupyter/custom/` (create that directory if it doesn't exist.) Then, whenever you run `jupyter notebook`, `iruby notebook`, etc. it will use this theme.
 
 ## Screenshots
 
