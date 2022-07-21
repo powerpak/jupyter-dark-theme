@@ -302,6 +302,9 @@ div.output_html { font-family: sans-serif; }
 .notebook_app .rendered_html tbody tr:nth-child(odd) {
   background: rgba(255, 255, 255, 0.05);
 }
+.notebook_app .rendered_html tbody tr:nth-child(odd):hover {
+  background: rgb(51, 68, 81);
+}
 
 /* Outputted SVGs should assume a white background */
 .output_svg div {
