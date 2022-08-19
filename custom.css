@@ -48,14 +48,16 @@ div.input_area {
 
 /* GLOBALS */
 
-@media not print { body { background-color: #eee; } }
+@media not print { body.notebook_app { background-color: #111; } }
 a { color: #CF4A4C; }
 a:hover, a:focus { color: #DE6F71; }
 
 /* INTRO PAGE */
 
-body[data-notebook-path] { background-color: #222; }
-body[data-notebook-path] #header, .terminal-app #header { display: none !important; }
+
+body[data-server-root], body[data-server-root] #header { background-color: #222; }
+body[data-server-root] #header-container { height: 0; }
+body[data-server-root] #header .header-bar { height: 0; }
 
 .tabbable { color: #979797; }
 .nav-tabs { border-bottom-color: #444; }
@@ -105,6 +107,7 @@ body[data-notebook-path] #header, .terminal-app #header { display: none !importa
 
 /* TERMINAL INTERFACE */
 .terminal-app #site { background: #272727; }
+.terminal-app #header { display: none !important; }
 .terminal-app .terminal { background: #141414 !important; }
 
 /* NOTEBOOK AND EDITOR INTERFACE */
@@ -199,19 +202,19 @@ span.save_widget span.filename:hover {
   outline: 5px auto rgba(102, 175, 233, 0.3);
   outline-offset: -1px;
 }
-.btn-default {
+.btn-default, #header .btn {
   background-color: #555;
   border-color: #222;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
   color: #aaa;
 }
-.btn-default:focus, .btn-default:hover {
+.btn-default:focus, .btn-default:hover, #header .btn:focus, #header .btn:hover {
   background-color: #555;
   border-color: #222;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
   color: #bbb;
 }
-.btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+.btn-default:active, .btn-default.active, #header .btn:active, .open > .dropdown-toggle.btn-default {
   background-color: #474747;
   color: #999;
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.2);
@@ -224,6 +227,7 @@ span.save_widget span.filename:hover {
   color: #aaa;
 }
 .btn-default:active:hover, .btn-default:active:focus, 
+#header.btn:active:hover, #header.btn:active:focus,
 .open > .dropdown-toggle.btn-default:hover, .open > .dropdown-toggle.btn-default:focus {
   background-color: #474747;
   color: #999;
